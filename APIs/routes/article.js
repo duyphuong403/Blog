@@ -86,7 +86,7 @@ router.put('/:id', verify, async (req, res) => {
             if (!row.length)
                 return res.status(404).json({ error: 'Not found any user' });
             if (result[0].user_id != row[0].user_id)
-                return res.status(401).json({ error: 'You do not permit to edit this article.' });
+                return res.status(401).json({ error: 'You are not permitted to edit this article.' });
             else if (req.body.title == null)
                 req.body.title = result[0].title;
             if (req.body.content == null)
